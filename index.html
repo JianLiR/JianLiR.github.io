@@ -7,37 +7,42 @@
     <style>
         #Navbar{
             background-color:#767522 ;
-            width: 100vw;
-            height: 100vh;
+            width: -10vw;
+            height: 10vh;
             display: flex;
             flex-direction: column;
             position: absolute;
             z-index: 2;
+            border-radius: 15px;
+            align-items: flex-start;
+            align-content: space-between;
         }
         #Nav_animation{
             background-color:#767522 ;
             width: 100vw;
             height: 100vh;
-            position: relative;
+            position: absolute;
             animation-name: NavagationBar;
-            animation-direction: alternate;
-            animation-duration: 4s;
-            animation-timing-function: ease;
+            animation-direction: normal;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
             z-index: 1;
+            border-radius: 15px;
         }
         @keyframes NavagationBar{
-            25%{
-                transform: translate(-25%);
-            }
-            50%{
-                transform: translate(-50%);
-            }
-            75%{
-                transform: translate(-75%);
-            }
-            100%{
-                transform: translate(-100%);
-            }
+            0%{transform: translate(0%);}
+            10%{transform: translate(-10%);}
+            20%{transform: translate(-20%);}
+            30%{transform: translate(-30%);}
+            40%{transform: translate(-40%);}
+            50%{transform: translate(-50%);}
+            60%{transform: translate(-60%);}
+            70%{transform: translate(-70%);}
+            80%{transform: translate(-80%);}
+            90%{transform: translate(-90%);}
+            100%{transform: translate(-90%);}
         }
         #container{
             display: flex;
