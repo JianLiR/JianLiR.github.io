@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
         #Navbar{
             display: flex;
             flex-direction: column;
@@ -67,16 +71,19 @@
             width: 10%;
         }
         .dog{
-            background-color: black;
+            background-image: url(https://cdn.greenfieldpuppies.com/wp-content/uploads/2025/09/brown-and-white-dog-sitting-like-a-human-on-a-couch-next-to-a-window-and-leaning-a-front-leg-on-the-windowsill-800x800.jpeg) ;
+            display: flex;
+            background-position-x: 60%;
+            background-position-y: 100%;
             width: 200px;
-            height: 700px;
-            opacity: 0.5;
+            height: 600px;
         }
         .cat{
-            background-color: aqua;
-            opacity: 0.5;
+            background-image: url(https://cdn.pixabay.com/photo/2023/12/08/05/38/cat-8436843_1280.jpg);
+            background-position-x: 69%;
+            background-position-y: 50%;
             width: 200px;
-            height: 700px;
+            height: 600px;
             margin: 0;
             padding: 0;
 
@@ -86,25 +93,27 @@
             background-repeat: no-repeat;
             opacity: 0.5;
             width: 200px;
-            height: 700px;
+            height: 600px;
             margin: 0;
             padding: 0;
             flex-grow: 2;
             
         }
         .fish{
-            background-color: hotpink;
-            opacity: 0.5;
+            background-image: url(https://cdn.pixabay.com/photo/2016/06/21/18/14/aquarium-1471618_1280.jpg);
+            background-position-x: 53%;
+            background-position-y: center;  
             width: 200px;
-            height: 700px;
+            height: 600px;
             margin: 0;
             padding: 0;
         }
         .bird{
-            background-color: lawngreen;
-            opacity: 0.5;
+            background-image: url(https://cdn.pixabay.com/photo/2025/05/22/20/33/robin-9616505_1280.jpg);
+            background-position-y: center;
+            background-position-x: 32%;
             width: 200px;
-            height: 700px;
+            height: 600px;
             margin: 0;
             padding: 0;
         }
@@ -126,7 +135,9 @@
                 <div class="space"></div>
                 <div class="dog"></div>
                 <div class="cat"></div>
-                <div class="logo"></div>
+                <div class="logo">
+                    <img src="johnsrestaurant.png" alt="My logo">
+                </div>
                 <div class="fish"></div>
                 <div class="bird"></div>
             </div>
