@@ -10,9 +10,11 @@
             padding: 0;
         }
         #Navbar{
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            justify-content: space-around;
             /*apparently moves it to the top*/
             z-index: 3;
             /*Makes the cornors rounded*/   
@@ -21,6 +23,7 @@
             padding: 15px;
             top: 0;
             position: fixed;
+            font-family: cursive;
         }
         /*whenever you hover over one of these tabs it will make it bigger*/
         .Home:hover{font-size: 2rem;}
@@ -30,6 +33,7 @@
         .Home:hover{font-size: 2rem;}
         .Birds:hover{font-size: 2rem;}
         .Snakes:hover{font-size: 2rem;}
+        .Bunnies:hover{font-size: 2rem;}
         .Toys:hover{font-size: 2rem;}
         .Food:hover{font-size: 2rem;}
 
@@ -70,6 +74,7 @@
         /* This makes it so the space next behind the navbar isnt used so it is all centered on the visible part*/
         .space{
             width: 10%;
+            height: 100%;
         }
         .dog{
             background-image: url(https://cdn.greenfieldpuppies.com/wp-content/uploads/2025/09/brown-and-white-dog-sitting-like-a-human-on-a-couch-next-to-a-window-and-leaning-a-front-leg-on-the-windowsill-800x800.jpeg) ;
@@ -90,14 +95,16 @@
 
         }
         .logo{
-            background-image: url(johnsrestaurant.png);
+            background-image: url(Johnsrestaurant.png);
             background-repeat: no-repeat;
-            opacity: 0.5;
-            width: 200px;
-            height: 600px;
+            background-position-x: 70%;
+            background-position-y: -16%;
+            width: 350px;
+            height: 700px;
             margin: 0;
             padding: 0;
             flex-grow: 2;
+            z-index: 1;
             
         }
         .fish{
@@ -118,33 +125,45 @@
             margin: 0;
             padding: 0;
         }
+        #Popular{
+            font-size: 2rem;
+        }
+        .Options{
+            background-color: #767522;
+            width: 100%;
+            height: 15rem;
+        }
     </style>
 </head>
 <body>
         <div id="Nav_animation"></div>
         <div id="Navbar">
+            <p>Johns Home</p>
             <a href=index.html class="Home">Home</a>
             <a href=Soldout.html class="Dogs">Dogs</a>
             <a href=Soldout.html class="Cats">Cats</a>
             <a href=Soldout.html class="Birds">Birds</a>
             <a href=Soldout.html class="Fishes">Fishes</a>
-            <a href=Soldout.html class="Snakes">Snakes</a>      
-            <a href="#" class="Toys">Toys</a>
+            <a href=Soldout.html class="Snakes">Snakes</a> 
+            <a href=Soldout.html class="Bunnies">Bunnies</a>
+            <a href="https://www.toysrus.com/?srsltid=AYCX9vJRLsAnxPItP4Z3ld4E1o3Te9nhXp2ZgzaBZ5po7Xs09P8WPAOL" class="Toys">Toys</a>
             <a href="https://www.jollibeefoods.com/menu" class="Food">Food</a>  
         </div>
             <div class="Selling">
                 <div class="space"></div>
                 <div class="dog"></div>
                 <div class="cat"></div>
-                <div class="logo">
-                    <img src="johnsrestaurant.png" alt="My logo">
-                </div>
+                <div class="logo"></div>
                 <div class="fish"></div>
                 <div class="bird"></div>
             </div>
             <div>
-                <p>Hello</p>
-                <div></div>
+                <p id="Popular">Popular items</p>
+                <div class="Options">
+                    <div class="Pdog"></div>
+                    <div class="Pcat"></div>
+                    <div class="Pfish"></div>
+                </div>
             </div>
 </body>
 </html>
