@@ -51,8 +51,19 @@ body{
     border-radius: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
+}
+.slide{
+    /*the goal is to make it so it slides across to a new popular option like the petco one*/
+    width: 90%;
+    height: 90%;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
 }
 .Pdog{
     width: 250px;

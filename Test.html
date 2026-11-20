@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .css-loop-ui input[type="radio"] {
+  display: none;
+}
+
+.panel {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  /* 9s total loop = 3s per slide */
+  animation: autoCycle 9s infinite;
+}
+
+/* Stagger each panel by 3 seconds */
+.p1 { animation-delay: 0s; }
+.p2 { animation-delay: 3s; }
+.p3 { animation-delay: 6s; }
+
+/* Smooth fade-in, hold, and fade-out */
+@keyframes autoCycle {
+  0%, 33.33%, 100% { opacity: 0; transform: translateY(10px); pointer-events: none; }
+  5%, 28%           { opacity: 1; transform: translateY(0);    pointer-events: auto; }
+}
+
+/* When the user interacts (hover or focus/click), pause auto-loop and show selected */
+.css-loop-ui:hover .panel,
+.css-loop-ui:focus-within .panel {
+  animation: none;
+}
+
+#tab1:checked ~ .stage .p1,
+#tab2:checked ~ .stage .p2,
+#tab3:checked ~ .stage .p3 {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+    
+    </style>
+</head>
+<body>
+    <div class="css-loop-ui">
+  <!-- Hidden radio controls -->
+  <input type="radio" name="tabs" id="tab1" checked>
+  <input type="radio" name="tabs" id="tab2">
+  <input type="radio" name="tabs" id="tab3">
+
+  <!-- Visible 3 Buttons -->
+  <div class="buttons">
+    <label for="tab1" class="btn">One</label>
+    <label for="tab2" class="btn">Two</label>
+    <label for="tab3" class="btn">Three</label>
+  </div>
+
+  <!-- Animated Content Panels -->
+  <div class="stage">
+    <div class="panel p1">Panel 1</div>
+    <div class="panel p2">Panel 2</div>
+    <div class="panel p3">Panel 3</div>
+  </div>
+</div>
+
+<P>this is a test cite and most of the stuff here is ai'ed and for me to learn</P>
+</body>
+</html>
