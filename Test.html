@@ -1,72 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .css-loop-ui input[type="radio"] {
-  display: none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .marquee {
+  overflow: hidden;
+  width: 300px;
 }
 
-.panel {
-  position: absolute;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  /* 9s total loop = 3s per slide */
-  animation: autoCycle 9s infinite;
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 15s linear infinite;
 }
 
-/* Stagger each panel by 3 seconds */
-.p1 { animation-delay: 0s; }
-.p2 { animation-delay: 3s; }
-.p3 { animation-delay: 6s; }
-
-/* Smooth fade-in, hold, and fade-out */
-@keyframes autoCycle {
-  0%, 33.33%, 100% { opacity: 0; transform: translateY(10px); pointer-events: none; }
-  5%, 28%           { opacity: 1; transform: translateY(0);    pointer-events: auto; }
+.track img {
+  height: 200px;
+  margin-right: 16px; /* Use margin instead of flex gap for exact 50% math */
+  object-fit: cover;
 }
 
-/* When the user interacts (hover or focus/click), pause auto-loop and show selected */
-.css-loop-ui:hover .panel,
-.css-loop-ui:focus-within .panel {
-  animation: none;
+/* Optional: Pause when the user hovers */
+.marquee:hover .track {
+  animation-play-state: paused;
 }
 
-#tab1:checked ~ .stage .p1,
-#tab2:checked ~ .stage .p2,
-#tab3:checked ~ .stage .p3 {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-    
-    </style>
+  </style>
 </head>
 <body>
-    <div class="css-loop-ui">
-  <!-- Hidden radio controls -->
-  <input type="radio" name="tabs" id="tab1" checked>
-  <input type="radio" name="tabs" id="tab2">
-  <input type="radio" name="tabs" id="tab3">
+  <div class="marquee">
+  <div class="track">
+    <!-- Set 1: Your Pictures -->
+     <div class="dog">
+    <img src="https://cdn.pixabay.com/photo/2023/12/05/16/57/dog-8432098_1280.jpg" alt="Picture 1">
+     </div>
+    <img src="https://cdn.pixabay.com/photo/2025/03/26/12/14/kitten-9494429_1280.jpg" alt="Picture 2">
+    <img src="https://cdn.pixabay.com/photo/2020/03/27/19/30/dwarf-rabbit-4974680_1280.jpg" alt="Picture 3">
 
-  <!-- Visible 3 Buttons -->
-  <div class="buttons">
-    <label for="tab1" class="btn">One</label>
-    <label for="tab2" class="btn">Two</label>
-    <label for="tab3" class="btn">Three</label>
-  </div>
-
-  <!-- Animated Content Panels -->
-  <div class="stage">
-    <div class="panel p1">Panel 1</div>
-    <div class="panel p2">Panel 2</div>
-    <div class="panel p3">Panel 3</div>
+    <!-- Set 2: Exact Duplicate for Seamless Loop -->
+    <img src="https://cdn.pixabay.com/photo/2023/12/05/16/57/dog-8432098_1280.jpg" alt="" aria-hidden="true">
+    <img src="https://cdn.pixabay.com/photo/2025/03/26/12/14/kitten-9494429_1280.jpg" alt="" aria-hidden="true">
+    <img src="https://cdn.pixabay.com/photo/2020/03/27/19/30/dwarf-rabbit-4974680_1280.jpg" alt="" aria-hidden="true">
   </div>
 </div>
 
-<P>this is a test cite and most of the stuff here is ai'ed and for me to learn</P>
 </body>
 </html>
