@@ -92,3 +92,33 @@ body{
     background-position: center;
     border-radius: 20px;
 }
+    .marquee {
+  overflow: hidden;
+  width: 70%;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
+
+.track img {
+  height: 200px;
+  margin-right: 16px; /* Use margin instead of flex gap for exact 50% math */
+  object-fit: cover;
+}
+
+/* Optional: Pause when the user hovers */
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
